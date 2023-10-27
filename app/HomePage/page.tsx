@@ -41,6 +41,7 @@ const Home = ({ title }: HomeProps) => {
                 {/* Right Side */}
                 <div className='basis-1/2 flex items-center justify-center w-full'>
                     <div className='h-64 w-64 flex items-center '>
+                        <div className='relative h-32 w-32 bg-purple-400'></div>
                         <Image className='h-full w-full' height={100} width={100} src={Mobile} alt="" />
                     </div>
                     <motion.div

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Box from "./Box";
-import contentData from "./data";
+import { contentData } from "./data";
 import RedGhost from "@/public/red-ghost.png";
 
 const SoundsFamiliar = () => {
@@ -34,7 +34,10 @@ const SoundsFamiliar = () => {
   }, [isIntersecting]);
 
   return (
-    <section className="overflow-x-hidden mt-48 mb-32 p-4 px-20" ref={ref}>
+    <section
+      className="overflow-x-hidden mt-48 mb-32 p-4 px-20"
+      ref={ref}
+    >
       <div className="flex flex-row items-center justify-between">
         <motion.div
           className="inline-block"
@@ -58,7 +61,7 @@ const SoundsFamiliar = () => {
             visible: {
               opacity: 1,
               scale: 1,
-              x: [0, -100, -300, -450, -500],
+              x: [0, -100, -300, -450, -450],
               y: [35, 20, 10, 0, -10],
               rotate: [-60, -45, -35, -35, -35, -35, -15],
             },
@@ -68,7 +71,10 @@ const SoundsFamiliar = () => {
           <Image width={70} height={70} alt="" src={RedGhost} />
         </motion.div>
       </div>
-      <div className="p-10 flex space-x-8 gap-7 items-center overflow-x-auto no-scrollbar h-250" ref={boxContainerRef}>
+      <div
+        className="p-10 flex space-x-8 gap-7 items-center overflow-x-auto no-scrollbar h-[350px]"
+        ref={boxContainerRef}
+      >
         {contentData.map((data, index) => (
           <Box key={index} {...data} />
         ))}
